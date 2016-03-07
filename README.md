@@ -1,2 +1,6 @@
 # SADburger
-canvas-based platforming game
+Sally
+Alice
+Derrick
+
+canvas-based burger-creation apparatus
