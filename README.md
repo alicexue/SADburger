@@ -1,2 +1,2 @@
-# SADjumper
+# SADburger
 canvas-based platforming game
