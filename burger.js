@@ -245,7 +245,6 @@ var play = function() {
 		drawPatties();
 		drawOriginBun();
 		updatePatties();
-		document.getElementById("levelnum").innerHTML = "Level " + level;
 		if (gameWon){
 				fallSpeed++;
 				level++;
