@@ -103,18 +103,9 @@ var updateStack = function(delta,canMove){
 };
 
 
-// change pattiesXcor and pattiesYcor
+// Move patties down and check for contact with burger stack
 var updatePatties = function() {
-	/*
-		// delete the lowest patty when it hits the bottom and add a new one
-		if (patties.length > 0 && patties[0]["ycor"] == cHeight) {
-				patties.splice(0,1);
-				patties.push({xcor: Math.floor(Math.random() * (cWidth - 50)) + 25,
-											ycor: 0});
-				setType(patties[patties.length-1]);
-				
-				
-		}*/ if (frameNumber%150 == 0) {
+         if (frameNumber%150 == 0) {
 				// add another patty to the top of the canvas (end of array)
 				patties.push({xcor: Math.floor(Math.random() * (cWidth - 50)) + 25,
 											ycor: 0});
@@ -169,19 +160,19 @@ var setType = function(patty){
 		// slice o' tomato
 		patty["style"] = "#DF3232";
 		patty["height"] = 12;    
-		patty["value"] = 4;
+		patty["value"] = 3;
 		break;
 	case 3:
 		// good ol' american cheese
 		patty["style"] = "#FFD700";
 		patty["height"] = 8;
-		patty["value"] = 3;
+		patty["value"] = 4;
 		break;
 	case 4:
-		// repulsive mystery meat
+		// burned mystery meat
 		patty["style"] = "#000000";
 		patty["height"] = 10;
-		patty["value"] = -2;
+		patty["value"] = -3;
 		break;
 	
 	default:
@@ -194,7 +185,6 @@ var setType = function(patty){
 };
 
 // draw different patties depending on patty
-// patty is object
 var drawPatty = function(patty){
 	ctx.beginPath();
 	ctx.strokeStyle = patty["style"];
@@ -206,7 +196,7 @@ var drawPatty = function(patty){
 	ctx.fill();
 };
 
-// draw all patties in pattiesXcor and stackX
+// draw all patties in patties and stack arrays
 var drawPatties = function() {
 	for (i=0;i<patties.length;i++) {
 			drawPatty(patties[i]);
@@ -216,12 +206,14 @@ var drawPatties = function() {
 	}
 };
 
+
 var play = function() {
 	ctx.clearRect(0,0,cWidth,cHeight);
 	drawPatties();
 	drawOriginBun();
 	updatePatties();
 	document.getElementById("scorenum").innerHTML = "Score: " + score;
+	document.getElementById("levelnum").innerHTML = "Level " + level;
 	if (gameWon){
 		fallSpeed++;
 		level++;
@@ -242,3 +234,42 @@ restartBtn.addEventListener("click",setUp);
 window.addEventListener("keydown", moveOriginBun);
 
 setUp();
+
+
+/*
+ctx2.beginPath();
+ctx2.strokeStyle = "#70B226";
+ctx2.fillStyle = "#70B226";
+ctx2.rect(5,5,10, 4);
+ctx2.fill();
+ctx2.stroke();
+ctx2.closePath();
+
+atty["style"] = ;
+		patty["value"] = 2;
+		break;
+	case 2:
+		// slice o' tomato
+		patty["style"] = "#DF3232";
+		patty["height"] = 12;    
+		patty["value"] = 4;
+		break;
+	case 3:
+		// good ol' american cheese
+		patty["style"] = "#FFD700";
+		patty["height"] = 8;
+		patty["value"] = 3;
+		break;
+	case 4:
+		// repulsive mystery meat
+		patty["style"] = "#000000";
+		patty["height"] = 10;
+		patty["value"] = -2;
+		break;
+	
+	default:
+		// meaty burger patty
+		patty["style"] = "#8B4513";
+		patty["height"] = 20;
+		patty["value"] = 5;
+*/

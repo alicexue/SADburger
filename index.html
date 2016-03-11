@@ -1,22 +1,127 @@
 <html>
   <head>
+  	<style>
+  	
+  	h1,h2,h3 {
+    font-family: "Helvetica";
+	}
+	.button {
+		font-family: "Helvetica";
+	    background-color: white; /* Green */
+	    border: none;
+	    color: black;
+	    padding: 16px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    -webkit-transition-duration: 0.4s; /* Safari */
+	    transition-duration: 0.4s;
+	    cursor: pointer;
+	    border-radius: 8px;
+	    
+	}
+	
+	.button1 {
+	    border: 2px solid #4CAF50;
+	}
+	
+	.button1:hover {
+	    background-color: #4CAF50;
+	    color: white;
+	}
+	
+	.button2 {
+	    border: 2px solid #008CBA;
+	}
+	
+	.button2:hover {
+	    background-color: #008CBA;
+	    color: white;
+	}
+	
+	.button3 {
+	    border: 2px solid #f44336;
+	}
+	
+	.button3:hover {
+	    background-color: #f44336;
+	    color: white;
+	}
+	.boxed {
+		font-family: "Helvetica";
+  		border: 1px solid black ;
+  		width: 400px;
+  		background-color: white;
+	}
+	.brazy {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.good {
+		color: green;
+	}
+	.bad {
+		color: red;
+	}
+
+</style>
 		<title> 
-			Sad Burger 
+			SADBurger 
 		</title>
+		<br>
 		<h1>
 		<center>
-			Sad Burger
+			SADBurger
 		</center>
 		</h1>
 	</head>
-	<body><center>
-		<canvas id="playground" style ="border:1px solid #000000;" height="600" width="500">
+	<body bgcolor ="#a2e0f4">
+		<center>
+		<canvas id="playground" style ="border:3px solid #000000; 
+  		background-color: white;" height="600" width="500">
 		</canvas>
 		<br>
-		<h2 id="scorenum"> Score: 0 </h2>
-		<button id = "play">Play</button>
-		<button id = "pause">Pause</button>
-		<button id = "restart">Restart</button>
+		<h2 id="levelnum"></h2>
+		<h3 id="scorenum"></h3>
+		<button class="button button1" id = "play">Play</button>
+		<button class="button button2" id = "pause">Pause</button>
+		<button class="button button3" id = "restart">Restart</button>
+		
+		<br>
+		<br>
+		
+		<div class="boxed">
+  			<h2>Welcome to SADBurger!</h2>
+  			Created by <b>S</b>ally Bao, <b>A</b>lice Xue, and <b>D</b>errick Lui
+  			<hr>
+  			<p  class="brazy">
+  			<b>Instructions:</b>
+  			</p>
+  			Press the <b>left</b> and <b>right</b> arrow keys to move your bun.
+  			<br>
+  			Catch the patties, but avoid the burnt ones.
+  			<br>
+  			Be careful as the stack can <b>tilt</b> if uneven!
+  			<br>
+  			<hr>
+  			<p class="brazy">
+  			Points:
+  			</p>
+  			<b>Meat</b> = <font class="good">5</font> points
+  			<br>
+  			<b>Cheese</b> = <font class="good">4</font> points
+  			<br>
+  			<b>Tomato</b> = <font class="good">3</font> points
+  			<br>
+  			<b>Lettuce</b> = <font class="good">2</font> points
+  			<br>
+  			<b>Burnt Meat</b> = <font class="bad">-3</font> points
+  			<br>
+  			<br>
+		</div>
+		
 		</center>
 	</body>
 		<script src="burger.js">
